@@ -1,0 +1,24 @@
+trend_research_task:
+  description: >
+    Research trending LinkedIn topics and hashtags in {industry} for the current month.
+    Identify 3-5 high-engagement post formats currently performing well.
+  expected_output: >
+    A markdown list of trending topics, relevant hashtags, and successful post formats
+    in {industry}, with engagement statistics if available.
+  agent: linkedin_researcher
+
+content_creation_task:
+  description: >
+    Create 3 LinkedIn post variations about {topic} using the research findings.
+    Each post should be between 300-500 characters and include:
+    - An attention-grabbing hook
+    - Valuable insights
+    - A call-to-action or question
+    - Relevant hashtags (3-5)
+  expected_output: >
+    Three complete LinkedIn post drafts formatted as markdown, each with:
+    - Post content
+    - Suggested hashtags
+    - Engagement strategy notes
+  agent: linkedin_creator
+  output_file: linkedin_posts.md

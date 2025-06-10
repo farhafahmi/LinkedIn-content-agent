@@ -1,0 +1,12 @@
+[project]
+name = "linkedin-content-agent"
+version = "0.1.0"
+dependencies = [
+    "crewai",
+    "crewai-tools",
+    "python-dotenv"
+]
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
