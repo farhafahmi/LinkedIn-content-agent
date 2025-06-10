@@ -1,54 +1,99 @@
-# LatestAiDevelopment Crew
+# **LinkedIn Content Agent by crewAI**  
 
-Welcome to the LatestAiDevelopment Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+🚀 AI-powered LinkedIn content creation made easy – automate high-quality posts with a collaborative crew of AI agents.  
 
-## Installation
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## **Table of Contents**  
+1. [Installation](#installation)  
+2. [Configuration](#configuration)  
+3. [Running the Project](#running-the-project)  
+4. [Understanding Your Crew](#understanding-your-crew)  
+5. [Support](#support)  
 
-First, if you haven't already, install uv:
 
-```bash
-pip install uv
-```
+## **Installation**  
 
-Next, navigate to your project directory and install the dependencies:
+### **Prerequisites**  
+- Python **>=3.10 <3.13**  
+- **[UV](https://github.com/astral-sh/uv)** (for dependency management)  
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+### **Setup**  
+1. Install **UV**:  
+   pip install uv
+   
+2. Install dependencies:  
+   crewai install
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
 
-- Modify `src/latest_ai_development/config/agents.yaml` to define your agents
-- Modify `src/latest_ai_development/config/tasks.yaml` to define your tasks
-- Modify `src/latest_ai_development/crew.py` to add your own logic, tools and specific args
-- Modify `src/latest_ai_development/main.py` to add custom inputs for your agents and tasks
+## **Configuration**  
 
-## Running the Project
+### **1. Set Up API Keys**  
+Add your `OPENAI_API_KEY` to `.env`:  
+OPENAI_API_KEY=your-api-key-here
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+### **2. Customize Agents (`agents.yaml`)**  
+Define your AI agents (e.g., **Researcher**, **Writer**, **Editor**) in:  
+`src/linkedin_content_agent/config/agents.yaml`  
 
-```bash
-$ crewai run
-```
+Example:  
+researcher:
+  role: "Find trending LinkedIn topics"
+  goal: "Deliver data-backed insights for content creation"
+  backstory: "An expert in social media trends and SEO."
 
-This command initializes the latest-ai-development Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+### **3. Define Tasks (`tasks.yaml`)**  
+Set up workflows (e.g., "Write a viral LinkedIn post") in:  
+`src/linkedin_content_agent/config/tasks.yaml`  
 
-## Understanding Your Crew
+Example:  
+research_task:
+  description: "Analyze trending LinkedIn topics in AI"
+  agent: "researcher"
 
-The latest-ai-development Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
-## Support
+### **4. Modify Crew Logic (`crew.py`)**  
+Customize agent interactions in:  
+`src/linkedin_content_agent/crew.py`  
 
-For support, questions, or feedback regarding the LatestAiDevelopment Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+### **5. Adjust Inputs (`main.py`)**  
+Change prompts or inputs in:  
+`src/linkedin_content_agent/main.py`  
 
-Let's create wonders together with the power and simplicity of crewAI.
+
+## **Running the Project**  
+
+Start your AI content team:  
+crewai run
+
+**Output:** Generated LinkedIn posts will be saved as `report.md` (or your specified format).  
+
+
+## **Understanding Your Crew**  
+
+Your agents work together like a content agency:  
+
+| **Agent**      | **Role**                          | **Tools**                |
+|----------------|-----------------------------------|--------------------------|
+| **Researcher** | Finds viral topics & data         | Web search, SEO analysis |
+| **Writer**     | Crafts engaging posts             | GPT-4, storytelling      |
+| **Editor**     | Polishes tone & clarity           | Grammar checks           |
+| **Strategist** | Optimizes for engagement          | Analytics tools          |
+
+
+## **Support**  
+
+Need help?  
+📖 [Documentation](https://docs.crewai.com)  
+🐛 [GitHub Issues](https://github.com/crewAI-examples/LinkedIn-Content-Agent)  
+💬 [Discord Community](https://discord.gg/crewai)  
+
+
+**Let’s automate LinkedIn content like a pro!** ✨  
+
+
+### **Key Features**  
+✅ **Multi-agent collaboration** (research → writing → editing)  
+✅ **Customizable workflows** (adjust tasks in YAML)  
+✅ **SEO & engagement optimization**  
+✅ **Easy deployment** (1 command: `crewai run`)  
